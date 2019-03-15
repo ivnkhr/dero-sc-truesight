@@ -1,0 +1,131 @@
+@font-face {
+    font-family: MainFont;
+    src: url('./font.ttf');
+    font-weight: 400;
+}
+
+* {
+	outline: none;
+	font-family: MainFont, monospace!important;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Page Wrappers */
+
+div.main, div.full {
+	border: 5px solid #15272b;
+	background-color: #365056;
+	color: #dffffe;
+}
+
+div.main {
+	width: 200px;
+	margin: 2px 4px 2px 4px;
+	padding: 10px;
+}
+
+div.full {
+	width: auto;
+	margin: 0;
+	padding: 40px;
+	padding-left: 20%;
+	padding-right: 20%;
+	height: calc( 100vh - 90px );
+}
+
+/* Page Wrappers */
+
+/* UI Elements */
+
+a{
+  color: #dffffe;
+}
+a:hover{
+  color: white;
+  font-weight: bold;
+}
+a:active{
+  color: yellow;
+}
+
+.emphasize{
+  color: white;
+}
+
+.status_on{
+  color: lime;
+  font-weight: bold;
+}
+
+.status_off{
+  color: red;
+  font-weight: normal;
+}
+
+.status_on::after{
+  content: 'connected';
+}
+
+.status_off::after{
+  content: 'disconnected';
+}
+
+.loading {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: rgba(20,20,20,0.75);
+	border: 1px solid white;
+}
+
+.loading .entitlement {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 0;
+}
+
+div.button {
+	padding: 10px;
+	font-weight: bold;
+	font-size: 12px;
+	background-color: #15272b;
+	text-align: center;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+div.button:hover {
+	background-color: #dffffe;
+	color: #365056;
+}
+
+input {
+	background-color: #15272b;
+	border: 0;
+	color: white;
+	padding: 10px;
+	margin-top: 5px;
+	width: calc( 100% - 20px );
+	border-bottom: 2px solid #365056;
+}
+
+input:focus {
+	border-bottom: 2px solid #dffffe;
+}
+
+/* UI Elements */

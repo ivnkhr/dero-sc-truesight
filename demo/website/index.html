@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$('.run').click(function(){
+	
+				var data = JSON.stringify ({ 'jsonrpc' : '2.0', 'id': 0, 'method': 'getaddress', 'params': {}});
+	
+				var xhr = new XMLHttpRequest();
+				xhr.withCredentials = false;
+	
+				xhr.addEventListener("readystatechange", function () {
+					
+					if (this.readyState === 4) {
+						try{
+							var json = JSON.parse(this.response);
+							$('.result').text(JSON.stringify(json));
+						}catch(err){
+	
+						}
+	
+					}
+	
+				});
+	
+				var url = $('.truesight-wallet').val() + "/json_rpc";
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.send(data);
+	
+			});
+			
+		});
+	</script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.frame{
+			width: 400px;
+			margin: 20px auto;
+		}
+		input{
+			border: 0;
+			margin-top: 10px;
+			width: 100%;
+			outline: 1px solid #333;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="frame">
+		<div class="truesight-noscript">Truesight not detected, please install it from <a href="http://plrs.pro/truesight">this site</a></div>
+		<hr/>
+		wallet<br/>
+		<input class="truesight-wallet" value="install and run truesight plugin"/><br/>
+		daemon<br/>
+		<input class="truesight-daemon" value="install and run truesight plugin"/><br/>
+		<input type="button" class="run" value="Get Message"/>
+		<hr/>
+		<br/>
+		<div class="result">...</div>
+	</div>
+
+</body>
+</html>
