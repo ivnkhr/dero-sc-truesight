@@ -22,6 +22,7 @@ $(document).ready(function(){
 	});
 	
 	$('.refresh-action').click(function(){
+		_background.installListeners();
 		wallet_connection_status();
 		daemon_connection_status();
 	});

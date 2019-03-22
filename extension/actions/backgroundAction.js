@@ -96,7 +96,7 @@ var responseListener = function(details){
 
 /*On install*/
 chrome.runtime.onInstalled.addListener(function(){
-	chrome.storage.local.set({'wallet': 'http://127.0.0.1:30307'});
+	chrome.storage.local.set({'wallet': 'http://127.0.0.1:30309'});
 	chrome.storage.local.set({'daemon': 'http://127.0.0.1:30306'});
 	// chrome.storage.local.set({'active': true});
 	installListeners();
